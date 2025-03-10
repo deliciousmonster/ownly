@@ -1,0 +1,13 @@
+type Users @table @export {
+    email: String @primaryKey
+    preferences: Any
+    priority: Any
+    allocations: Any
+}
+
+type Weeks @table @export {
+    weeks: String @primaryKey
+    valueorder: Int
+    calendarorder: Int
+    label: String
+}

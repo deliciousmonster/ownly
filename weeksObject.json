@@ -1,0 +1,158 @@
+[
+  {
+    "valueorder": 1,
+    "calendarorder": 26,
+    "weeks": "51–52",
+    "label": "Christmas & New Year’s"
+  },
+  {
+    "valueorder": 2,
+    "calendarorder": 7,
+    "weeks": "13-14",
+    "label": "Semana Santa / Easter"
+  },
+  {
+    "valueorder": 3,
+    "calendarorder": 24,
+    "weeks": "47-48",
+    "label": "Thanksgiving Week"
+  },
+  {
+    "valueorder": 4,
+    "calendarorder": 25,
+    "weeks": "49-50",
+    "label": "Post-Thanksgiving / Early December"
+  },
+  {
+    "valueorder": 5,
+    "calendarorder": 2,
+    "weeks": "3-4",
+    "label": "Whale Watching Season Peak 1"
+  },
+  {
+    "valueorder": 6,
+    "calendarorder": 3,
+    "weeks": "5-6",
+    "label": "Whale Watching Season Peak 2"
+  },
+  {
+    "valueorder": 7,
+    "calendarorder": 4,
+    "weeks": "7-8",
+    "label": "Whale Watching Season Peak 3"
+  },
+  {
+    "valueorder": 8,
+    "calendarorder": 5,
+    "weeks": "9-10",
+    "label": "Whale Watching Season Peak 4"
+  },
+  {
+    "valueorder": 9,
+    "calendarorder": 1,
+    "weeks": "1-2",
+    "label": "New Year’s Recovery / High Season Start"
+  },
+  {
+    "valueorder": 10,
+    "calendarorder": 6,
+    "weeks": "11-12",
+    "label": "Spring Break"
+  },
+  {
+    "valueorder": 11,
+    "calendarorder": 23,
+    "weeks": "45-46",
+    "label": "Baja 1000 Race / Los Cabos Film Festival"
+  },
+  {
+    "valueorder": 12,
+    "calendarorder": 20,
+    "weeks": "39-40",
+    "label": "Whale Shark & Diving Peak Season 1"
+  },
+  {
+    "valueorder": 13,
+    "calendarorder": 21,
+    "weeks": "41-42",
+    "label": "Whale Shark & Diving Peak Season 2"
+  },
+  {
+    "valueorder": 14,
+    "calendarorder": 22,
+    "weeks": "43-44",
+    "label": "Whale Shark & Diving Peak Season 3"
+  },
+  {
+    "valueorder": 15,
+    "calendarorder": 11,
+    "weeks": "21-22",
+    "label": "Memorial Day Weekend"
+  },
+  {
+    "valueorder": 16,
+    "calendarorder": 13,
+    "weeks": "15-16",
+    "label": "Peak Season 1"
+  },
+  {
+    "valueorder": 17,
+    "calendarorder": 9,
+    "weeks": "17-18",
+    "label": "Peak Season 2"
+  },
+  {
+    "valueorder": 18,
+    "calendarorder": 10,
+    "weeks": "19-20",
+    "label": "Peak Season 3"
+  },
+  {
+    "valueorder": 19,
+    "calendarorder": 11,
+    "weeks": "21-22",
+    "label": "Peak Season 4"
+  },
+  {
+    "valueorder": 20,
+    "calendarorder": 12,
+    "weeks": "23-24",
+    "label": "Peak Season 5"
+  },
+  {
+    "valueorder": 21,
+    "calendarorder": 14,
+    "weeks": "27-28",
+    "label": "Hottest Summer Weeks 1"
+  },
+  {
+    "valueorder": 22,
+    "calendarorder": 15,
+    "weeks": "29-30",
+    "label": "Hottest Summer Weeks 2"
+  },
+  {
+    "valueorder": 23,
+    "calendarorder": 16,
+    "weeks": "31-32",
+    "label": "Hottest Summer Weeks 3"
+  },
+  {
+    "valueorder": 24,
+    "calendarorder": 17,
+    "weeks": "33-34",
+    "label": "Hottest Summer Weeks 4"
+  },
+  {
+    "valueorder": 25,
+    "calendarorder": 18,
+    "weeks": "35-36",
+    "label": "Labor Day Weekend"
+  },
+  {
+    "valueorder": 25,
+    "calendarorder": 19,
+    "weeks": "37-38",
+    "label": "October Shoulder Season"
+  }
+]

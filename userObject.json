@@ -1,0 +1,106 @@
+[
+  {
+    "email": "owner1",
+    "preferences": {
+      "weeks": [],
+      "lengths": []
+    },
+    "priority": {
+      "2026": 1
+    },
+    "allocations": {
+      "2026": []
+    }
+  },
+  {
+    "email": "owner2",
+    "preferences": {
+      "weeks": [],
+      "lengths": []
+    },
+    "priority": {
+      "2026": 2
+    },
+    "allocations": {
+      "2026": []
+    }
+  },
+  {
+    "email": "owner3",
+    "preferences": {
+      "weeks": [],
+      "lengths": []
+    },
+    "priority": {
+      "2026": 3
+    },
+    "allocations": {
+      "2026": []
+    }
+  },
+  {
+    "email": "owner4",
+    "preferences": {
+      "weeks": [],
+      "lengths": []
+    },
+    "priority": {
+      "2026": 4
+    },
+    "allocations": {
+      "2026": []
+    }
+  },
+  {
+    "email": "owner5",
+    "preferences": {
+      "weeks": [],
+      "lengths": []
+    },
+    "priority": {
+      "2026": 5
+    },
+    "allocations": {
+      "2026": []
+    }
+  },
+  {
+    "email": "owner6",
+    "preferences": {
+      "weeks": [],
+      "lengths": []
+    },
+    "priority": {
+      "2026": 6
+    },
+    "allocations": {
+      "2026": []
+    }
+  },
+  {
+    "email": "owner7",
+    "preferences": {
+      "weeks": [],
+      "lengths": []
+    },
+    "priority": {
+      "2026": 7
+    },
+    "allocations": {
+      "2026": []
+    }
+  },
+  {
+    "email": "owner8",
+    "preferences": {
+      "weeks": [],
+      "lengths": []
+    },
+    "priority": {
+      "2026": 8
+    },
+    "allocations": {
+      "2026": []
+    }
+  }
+]
