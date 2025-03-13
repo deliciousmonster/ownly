@@ -1,13 +1,15 @@
 type Users @table @export {
-    email: String @primaryKey
-    preferences: Any
+    name: String @primaryKey
+    weeks: Any
+    blocks: Any
     priority: Any
     allocations: Any
 }
 
 type Weeks @table @export {
     weeks: String @primaryKey
-    valueorder: Int
-    calendarorder: Int
+    valueorder: Int @indexed
+    calendarorder: Int @indexed
+    maintenance: Boolean @indexed
     label: String
 }

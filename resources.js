@@ -1,22 +1,15 @@
-/** Here we can define any JavaScript-based resources and extensions to tables
-
-export class MyCustomResource extends tables.TableName {
-	// we can define our own custom POST handler
-	post(content) {
-		// do something with the incoming content;
-		return super.post(content);
-	}
-	// or custom GET handler
+export class weeks extends tables.Weeks {
 	get() {
-		// we can modify this resource before returning
-		return super.get();
+		return super.get({ sort: { attribute: 'valueorder' } });
 	}
 }
- */
-// we can also define a custom resource without a specific table
-export class Greeting extends Resource {
-	// a "Hello, world!" handler
+
+export class draft extends tables.Users {
+	post(content) {
+		return super.post(content);
+	}
 	get() {
-		return { greeting: 'Hello, world!' };
+		const users = super.get({ select: ['name', 'weeks', 'blocks', 'priority'] });
+		return users.map((u) => ({ name: u.name, weeks: u.weeks.map((w) => w.calendarorder), blocks: u.blocks, priority: u.priority }))
 	}
 }

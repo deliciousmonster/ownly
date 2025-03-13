@@ -1,106 +1,58 @@
 [
   {
-    "email": "owner1",
-    "preferences": {
-      "weeks": [],
-      "lengths": []
-    },
-    "priority": {
-      "2026": 1
-    },
-    "allocations": {
-      "2026": []
-    }
+    "name": "user1",
+    "weeks": [],
+    "blocks": 2,
+    "priority": 1,
+    "allocations": []
   },
   {
-    "email": "owner2",
-    "preferences": {
-      "weeks": [],
-      "lengths": []
-    },
-    "priority": {
-      "2026": 2
-    },
-    "allocations": {
-      "2026": []
-    }
+    "name": "user2",
+    "weeks": [],
+    "blocks": 1,
+    "priority": 2,
+    "allocations": []
   },
   {
-    "email": "owner3",
-    "preferences": {
-      "weeks": [],
-      "lengths": []
-    },
-    "priority": {
-      "2026": 3
-    },
-    "allocations": {
-      "2026": []
-    }
+    "name": "user3",
+    "weeks": [],
+    "blocks": 3,
+    "priority": 3,
+    "allocations": []
   },
   {
-    "email": "owner4",
-    "preferences": {
-      "weeks": [],
-      "lengths": []
-    },
-    "priority": {
-      "2026": 4
-    },
-    "allocations": {
-      "2026": []
-    }
+    "name": "user4",
+    "weeks": [],
+    "blocks": 1,
+    "priority": 4,
+    "allocations": []
   },
   {
-    "email": "owner5",
-    "preferences": {
-      "weeks": [],
-      "lengths": []
-    },
-    "priority": {
-      "2026": 5
-    },
-    "allocations": {
-      "2026": []
-    }
+    "name": "user5",
+    "weeks": [],
+    "blocks": 2,
+    "priority": 5,
+    "allocations": []
   },
   {
-    "email": "owner6",
-    "preferences": {
-      "weeks": [],
-      "lengths": []
-    },
-    "priority": {
-      "2026": 6
-    },
-    "allocations": {
-      "2026": []
-    }
+    "name": "user6",
+    "weeks": [],
+    "blocks": 3,
+    "priority": 6,
+    "allocations": []
   },
   {
-    "email": "owner7",
-    "preferences": {
-      "weeks": [],
-      "lengths": []
-    },
-    "priority": {
-      "2026": 7
-    },
-    "allocations": {
-      "2026": []
-    }
+    "name": "user7",
+    "weeks": [],
+    "blocks": 1,
+    "priority": 7,
+    "allocations": []
   },
   {
-    "email": "owner8",
-    "preferences": {
-      "weeks": [],
-      "lengths": []
-    },
-    "priority": {
-      "2026": 8
-    },
-    "allocations": {
-      "2026": []
-    }
+    "name": "user8",
+    "weeks": [],
+    "blocks": 3,
+    "priority": 8,
+    "allocations": []
   }
 ]
