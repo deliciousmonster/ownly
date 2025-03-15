@@ -1,33 +1,38 @@
 [
   {
-    "name": "user1",
+    "email": "jaxon@deliciousmonster.com",
+    "name": "Jaxon",
     "weeks": [],
     "blocks": 2,
     "priority": 1,
     "allocations": []
   },
   {
-    "name": "user2",
+    "email": "kimawiley@gmail.com",
+    "name": "Kimberly",
     "weeks": [],
     "blocks": 1,
     "priority": 2,
     "allocations": []
   },
   {
-    "name": "user3",
+    "email": "santo@theplacenowaste.com",
+    "name": "Azzura",
     "weeks": [],
     "blocks": 3,
     "priority": 3,
     "allocations": []
   },
   {
-    "name": "user4",
+    "email": "mdgbaja@gmail.com",
+    "name": "Eric",
     "weeks": [],
     "blocks": 1,
     "priority": 4,
     "allocations": []
   },
   {
+    "email": "user5@gmail.com",
     "name": "user5",
     "weeks": [],
     "blocks": 2,
@@ -35,6 +40,7 @@
     "allocations": []
   },
   {
+    "email": "user6@gmail.com",
     "name": "user6",
     "weeks": [],
     "blocks": 3,
@@ -42,6 +48,7 @@
     "allocations": []
   },
   {
+    "email": "user7@gmail.com",
     "name": "user7",
     "weeks": [],
     "blocks": 1,
@@ -49,6 +56,7 @@
     "allocations": []
   },
   {
+    "email": "user8@gmail.com",
     "name": "user8",
     "weeks": [],
     "blocks": 3,

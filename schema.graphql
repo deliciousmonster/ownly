@@ -1,9 +1,12 @@
 type Users @table @export {
-    name: String @primaryKey
+    id: ID @primaryKey
+    email: String @indexed
+    name: String
     weeks: Any
     blocks: Any
     priority: Any
     allocations: Any
+    locked: Boolean
 }
 
 type Weeks @table @export {
