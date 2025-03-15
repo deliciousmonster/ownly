@@ -1,0 +1,106 @@
+@use "vars";
+
+body {
+  color: vars.$grey-overlay !important;
+  font-family: vars.$font-family-sans;
+  font-size: vars.$font-size-root;
+  font-weight: vars.$font-weight-light;
+  letter-spacing: 0.02rem;
+  line-height: vars.$font-line-height;
+}
+
+h1 {
+  font-size: vars.$font-size-h1;
+  font-weight: vars.$font-weight-light;
+  margin: 0 !important;
+  @media (min-width: 1100px) {
+    font-size: vars.$font-size-h1-max;
+  }
+}
+
+h2 {
+  font-size: vars.$font-size-h2;
+  font-weight: vars.$font-weight-light;
+  margin: 0 !important;
+  @media (min-width: 1100px) {
+    font-size: vars.$font-size-h2-max;
+  }
+}
+
+h3 {
+  font-size: vars.$font-size-h3;
+  font-weight: vars.$font-weight-light;
+  margin: 0 !important;
+  @media (min-width: 1100px) {
+    font-size: vars.$font-size-h3-max;
+  }
+}
+
+h4 {
+  font-size: vars.$font-size-h4;
+  font-weight: vars.$font-weight-light;
+  margin: 0 !important;
+  @media (min-width: 1100px) {
+    font-size: vars.$font-size-h4-max;
+  }
+}
+
+h5 {
+  font-size: vars.$font-size-h5;
+  font-weight: vars.$font-weight-light;
+  margin: 0 !important;
+  @media (min-width: 1100px) {
+    font-size: vars.$font-size-h5-max;
+  }
+}
+
+h6 {
+  font-size: vars.$font-size-h6;
+  font-weight: vars.$font-weight-light;
+  margin: 0 !important;
+  @media (min-width: 1100px) {
+    font-size: vars.$font-size-h6-max;
+  }
+}
+
+b,
+.text-bold {
+  font-weight: vars.$font-weight-bold;
+}
+
+.text-small {
+  font-size: vars.$font-size-small;
+  line-height: 1 !important;
+}
+
+.text-white {
+  color: vars.$color-white !important;
+}
+
+.text-grey {
+  color: vars.$color-grey !important;
+}
+
+.text-tan {
+  color: vars.$color-tan !important;
+}
+
+.text-green {
+  color: vars.$color-green !important;
+}
+
+.text-red {
+  color: vars.$color-red !important;
+}
+
+.text-danger {
+  color: vars.$color-red !important;
+}
+
+.text-darkgrey {
+  color: vars.$color-black !important;
+}
+
+.text-white-overlay {
+  color: rgba(255, 255, 255, 0.6);
+}

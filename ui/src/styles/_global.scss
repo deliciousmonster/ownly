@@ -1,0 +1,24 @@
+@use "vars";
+
+hr {
+  border: 0 none;
+  background-color: vars.$grey-overlay; /* Modern Browsers */
+  height: 1px !important;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: vars.$color-grey;
+  border: 0;
+  border-radius: 0;
+}

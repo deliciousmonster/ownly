@@ -10,9 +10,8 @@ type Users @table @export {
 }
 
 type Weeks @table @export {
-    weeks: String @primaryKey
-    valueorder: Int @indexed
-    calendarorder: Int @indexed
+    id: Int @primaryKey
+    value: Int @indexed
+    label: Any
     maintenance: Boolean @indexed
-    label: String
 }

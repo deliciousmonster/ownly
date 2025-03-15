@@ -1,0 +1,23 @@
+@use "vars";
+
+.btn {
+	&.btn-success {
+		background-color: vars.$color-success !important;
+		color: vars.$color-white !important;
+	}
+
+	&.btn-danger {
+		background-color: vars.$color-danger !important;
+		color: vars.$color-white !important;
+	}
+
+	&.btn-grey {
+		background-color: vars.$color-grey !important;
+		color: vars.$color-white !important;
+	}
+
+	&.btn-black {
+		background-color: vars.$color-black !important;
+		color: vars.$color-white !important;
+	}
+}

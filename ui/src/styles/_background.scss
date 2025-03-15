@@ -1,0 +1,31 @@
+@use "vars";
+
+#app-bg-color,
+#app-bg-dots {
+  bottom: 0;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100vw;
+}
+
+#app-bg-color {
+  background: vars.$color-white !important;
+  z-index: -2;
+
+  &.login {
+    background: vars.$color-green !important;
+  }
+}
+
+#app-bg-dots {
+  background: radial-gradient(vars.$lightest-grey-overlay 1px, transparent 0);
+  background-size: 3px 3px;
+  z-index: -1;
+
+  &.login {
+    background: radial-gradient(vars.$color-white 1px, transparent 0);
+  }
+}

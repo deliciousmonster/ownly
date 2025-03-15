@@ -1,0 +1,52 @@
+@use "vars";
+
+#profile {
+  .col {
+    &.weeks {
+      max-width: 120px;
+    }
+
+    &.label {
+      white-space: nowrap;
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .list {
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+    user-select: none;
+    cursor: move;
+  }
+
+  .radio-button {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .card {
+    background-color: vars.$color-white !important;
+    border: 1px solid vars.$color-grey;
+    color: vars.$color-black;
+    padding: 5px 15px;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+
+  .years {
+    display: flex;
+    flex-wrap: wrap;
+  }
+;
+
+  .year {
+    margin-bottom: 15px;
+    flex: 1 1 25%;
+  }
+
+  input {
+    margin-right: 10px;
+  }
+}

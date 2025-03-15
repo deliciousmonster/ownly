@@ -1,162 +1,214 @@
 [
   {
-    "valueorder": 1,
-    "calendarorder": 26,
-    "weeks": "51–52",
-    "label": "Christmas & New Year’s"
+    "value": 26,
+    "id": 26,
+    "label": {
+      "weeks": "51–52",
+      "description": "Christmas & New Year’s"
+    }
   },
   {
-    "valueorder": 2,
-    "calendarorder": 7,
-    "weeks": "13-14",
-    "label": "Semana Santa / Easter"
+    "value": 25,
+    "id": 7,
+    "label": {
+      "weeks": "13-14",
+      "description": "Semana Santa / Easter"
+    }
   },
   {
-    "valueorder": 3,
-    "calendarorder": 24,
-    "weeks": "47-48",
-    "label": "Thanksgiving Week"
+    "value": 24,
+    "id": 24,
+    "label": {
+      "weeks": "47-48",
+      "description": "Thanksgiving Week"
+    }
   },
   {
-    "valueorder": 4,
-    "calendarorder": 25,
-    "weeks": "49-50",
-    "label": "Post-Thanksgiving / Early December"
+    "value": 23,
+    "id": 25,
+    "label": {
+      "weeks": "49-50",
+      "description": "Post-Thanksgiving / Early December"
+    }
   },
   {
-    "valueorder": 5,
-    "calendarorder": 2,
-    "weeks": "3-4",
-    "label": "Whale Watching Season Peak 1"
+    "value": 22,
+    "id": 2,
+    "label": {
+      "weeks": "3-4",
+      "description": "Whale Watching Season Peak 1"
+    }
   },
   {
-    "valueorder": 6,
-    "calendarorder": 3,
-    "weeks": "5-6",
-    "label": "Whale Watching Season Peak 2"
+    "value": 21,
+    "id": 3,
+    "label": {
+      "weeks": "5-6",
+      "description": "Whale Watching Season Peak 2"
+    }
   },
   {
-    "valueorder": 7,
-    "calendarorder": 4,
-    "weeks": "7-8",
-    "label": "Whale Watching Season Peak 3"
+    "value": 20,
+    "id": 4,
+    "label": {
+      "weeks": "7-8",
+      "description": "Whale Watching Season Peak 3"
+    }
   },
   {
-    "valueorder": 8,
-    "calendarorder": 5,
-    "weeks": "9-10",
-    "label": "Whale Watching Season Peak 4"
+    "value": 19,
+    "id": 5,
+    "label": {
+      "weeks": "9-10",
+      "description": "Whale Watching Season Peak 4"
+    }
   },
   {
-    "valueorder": 9,
-    "calendarorder": 1,
-    "weeks": "1-2",
-    "label": "New Year’s Recovery / High Season Start"
+    "value": 18,
+    "id": 1,
+    "label": {
+      "weeks": "1-2",
+      "description": "New Year’s Recovery / High Season Start"
+    }
   },
   {
-    "valueorder": 10,
-    "calendarorder": 6,
-    "weeks": "11-12",
-    "label": "Spring Break"
+    "value": 17,
+    "id": 6,
+    "label": {
+      "weeks": "11-12",
+      "description": "Spring Break"
+    }
   },
   {
-    "valueorder": 11,
-    "calendarorder": 23,
-    "weeks": "45-46",
-    "label": "Baja 1000 Race / Los Cabos Film Festival"
+    "value": 16,
+    "id": 23,
+    "label": {
+      "weeks": "45-46",
+      "description": "Baja 1000 Race / Los Cabos Film Festival"
+    }
   },
   {
-    "valueorder": 12,
-    "calendarorder": 20,
-    "weeks": "39-40",
-    "label": "Whale Shark & Diving Peak Season 1"
+    "value": 15,
+    "id": 20,
+    "label": {
+      "weeks": "39-40",
+      "description": "Whale Shark & Diving Peak Season 1"
+    }
   },
   {
-    "valueorder": 13,
-    "calendarorder": 21,
-    "weeks": "41-42",
-    "label": "Whale Shark & Diving Peak Season 2"
+    "value": 14,
+    "id": 21,
+    "label": {
+      "weeks": "41-42",
+      "description": "Whale Shark & Diving Peak Season 2"
+    }
   },
   {
-    "valueorder": 14,
-    "calendarorder": 22,
-    "weeks": "43-44",
-    "label": "Whale Shark & Diving Peak Season 3"
+    "value": 13,
+    "id": 22,
+    "label": {
+      "weeks": "43-44",
+      "description": "Whale Shark & Diving Peak Season 3"
+    }
   },
   {
-    "valueorder": 15,
-    "calendarorder": 11,
-    "weeks": "21-22",
-    "label": "Memorial Day Weekend"
+    "value": 12,
+    "id": 11,
+    "label": {
+      "weeks": "21-22",
+      "description": "Memorial Day Weekend"
+    }
   },
   {
-    "valueorder": 16,
-    "calendarorder": 13,
-    "weeks": "15-16",
-    "label": "Peak Season 1"
+    "value": 11,
+    "id": 13,
+    "label": {
+      "weeks": "15-16",
+      "description": "Peak Season 1"
+    }
   },
   {
-    "valueorder": 17,
-    "calendarorder": 9,
-    "weeks": "17-18",
-    "label": "Peak Season 2"
+    "value": 10,
+    "id": 9,
+    "label": {
+      "weeks": "17-18",
+      "description": "Peak Season 2"
+    }
   },
   {
-    "valueorder": 18,
-    "calendarorder": 10,
-    "weeks": "19-20",
-    "label": "Peak Season 3"
+    "value": 9,
+    "id": 10,
+    "label": {
+      "weeks": "19-20",
+      "description": "Peak Season 3"
+    }
   },
   {
-    "valueorder": 19,
-    "calendarorder": 11,
-    "weeks": "21-22",
-    "label": "Peak Season 4"
+    "value": 8,
+    "id": 11,
+    "label": {
+      "weeks": "21-22",
+      "description": "Peak Season 4"
+    }
   },
   {
-    "valueorder": 20,
-    "calendarorder": 12,
-    "weeks": "23-24",
-    "label": "Peak Season 5"
+    "value": 7,
+    "id": 12,
+    "label": {
+      "weeks": "23-24",
+      "description": "Peak Season 5"
+    }
   },
   {
-    "valueorder": 21,
-    "calendarorder": 14,
-    "weeks": "27-28",
-    "label": "Hottest Summer Weeks 1",
+    "value": 6,
+    "id": 14,
+    "label": {
+      "weeks": "27-28",
+      "description": "Hottest Summer Weeks 1"
+    },
     "maintenance": true
   },
   {
-    "valueorder": 22,
-    "calendarorder": 15,
-    "weeks": "29-30",
-    "label": "Hottest Summer Weeks 2",
+    "value": 5,
+    "id": 15,
+    "label": {
+      "weeks": "29-30",
+      "description": "Hottest Summer Weeks 2"
+    },
     "maintenance": true
   },
   {
-    "valueorder": 23,
-    "calendarorder": 16,
-    "weeks": "31-32",
-    "label": "Hottest Summer Weeks 3",
+    "value": 4,
+    "id": 16,
+    "label": {
+      "weeks": "31-32",
+      "description": "Hottest Summer Weeks 3"
+    },
     "maintenance": true
   },
   {
-    "valueorder": 24,
-    "calendarorder": 17,
-    "weeks": "33-34",
-    "label": "Hottest Summer Weeks 4",
+    "value": 3,
+    "id": 17,
+    "label": {
+      "weeks": "33-34",
+      "description": "Hottest Summer Weeks 4"
+    },
     "maintenance": true
   },
   {
-    "valueorder": 25,
-    "calendarorder": 18,
-    "weeks": "35-36",
-    "label": "Labor Day Weekend"
+    "value": 2,
+    "id": 18,
+    "label": {
+      "weeks": "35-36",
+      "description": "Labor Day Weekend"
+    }
   },
   {
-    "valueorder": 25,
-    "calendarorder": 19,
-    "weeks": "37-38",
-    "label": "October Shoulder Season"
+    "value": 1,
+    "id": 19,
+    "label": {
+      "weeks": "37-38",
+      "description": "October Shoulder Season"
+    }
   }
 ]
