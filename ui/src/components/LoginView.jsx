@@ -16,10 +16,10 @@ function LoginView() {
         { headers: { Authorization: `Bearer ${tokenResponse.access_token}` } },
       );
       if (loginresponse.data.email) {
-        const response = await axios.get(`https://localhost:9926/getUser?email=${loginresponse.data.email}`);
-        if (response) {
-          setPersistedUser(response.data);
-          setTimeout(() => navigate('/profile'), 1);
+        const response = await axios.get(`https://localhost:9926/Users?email=${loginresponse.data.email}&select(id)`);
+        if (response.data[0]) {
+          setPersistedUser({ id: response.data[0] });
+          navigate('/profile');
         } else {
           setError('You are not authorized to use this application.')
         }

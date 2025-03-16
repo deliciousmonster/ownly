@@ -1,0 +1,210 @@
+[
+  {
+    "allocations": [
+      {
+        "value": 21,
+        "id": 3,
+        "label": {
+          "weeks": "5-6",
+          "description": "Whale Watching Season Peak 2"
+        }
+      },
+      {
+        "value": 16,
+        "id": 23,
+        "label": {
+          "weeks": "45-46",
+          "description": "Baja 1000 Race / Los Cabos Film Festival"
+        }
+      },
+      {
+        "value": 1,
+        "id": 19,
+        "label": {
+          "weeks": "37-38",
+          "description": "October Shoulder Season"
+        }
+      }
+    ]
+  },
+  {
+    "allocations": [
+      {
+        "value": 23,
+        "id": 25,
+        "label": {
+          "weeks": "49-50",
+          "description": "Post-Thanksgiving / Early December"
+        }
+      },
+      {
+        "value": 14,
+        "id": 21,
+        "label": {
+          "weeks": "41-42",
+          "description": "Whale Shark & Diving Peak Season 2"
+        }
+      },
+      {
+        "value": 7,
+        "id": 12,
+        "label": {
+          "weeks": "23-24",
+          "description": "Peak Season 5"
+        }
+      }
+    ]
+  },
+  {
+    "allocations": [
+      {
+        "value": 25,
+        "id": 7,
+        "label": {
+          "weeks": "13-14",
+          "description": "Semana Santa / Easter"
+        }
+      },
+      {
+        "id": 13,
+        "value": 12,
+        "label": {
+          "weeks": "25-26",
+          "description": "Peak Season 6"
+        }
+      },
+      {
+        "value": 9,
+        "id": 10,
+        "label": {
+          "weeks": "19-20",
+          "description": "Peak Season 3"
+        }
+      }
+    ]
+  },
+  {
+    "allocations": [
+      {
+        "value": 24,
+        "id": 24,
+        "label": {
+          "weeks": "47-48",
+          "description": "Thanksgiving Week"
+        }
+      },
+      {
+        "value": 13,
+        "id": 22,
+        "label": {
+          "weeks": "43-44",
+          "description": "Whale Shark & Diving Peak Season 3"
+        }
+      },
+      {
+        "value": 8,
+        "id": 11,
+        "label": {
+          "weeks": "21-22",
+          "description": "Peak Season 4"
+        }
+      }
+    ]
+  },
+  {
+    "allocations": [
+      {
+        "value": 26,
+        "id": 26,
+        "label": {
+          "weeks": "51–52",
+          "description": "Christmas & New Year’s"
+        }
+      },
+      {
+        "value": 11,
+        "id": 8,
+        "label": {
+          "weeks": "15-16",
+          "description": "Peak Season 1"
+        }
+      },
+      {
+        "value": 10,
+        "id": 9,
+        "label": {
+          "weeks": "17-18",
+          "description": "Peak Season 2"
+        }
+      }
+    ]
+  },
+  {
+    "allocations": [
+      {
+        "value": 20,
+        "id": 4,
+        "label": {
+          "weeks": "7-8",
+          "description": "Whale Watching Season Peak 3"
+        }
+      },
+      {
+        "value": 17,
+        "id": 6,
+        "label": {
+          "weeks": "11-12",
+          "description": "Spring Break"
+        }
+      }
+    ]
+  },
+  {
+    "allocations": [
+      {
+        "value": 19,
+        "id": 5,
+        "label": {
+          "weeks": "9-10",
+          "description": "Whale Watching Season Peak 4"
+        }
+      },
+      {
+        "value": 18,
+        "id": 1,
+        "label": {
+          "weeks": "1-2",
+          "description": "New Year’s Recovery / High Season Start"
+        }
+      }
+    ]
+  },
+  {
+    "allocations": [
+      {
+        "value": 22,
+        "id": 2,
+        "label": {
+          "weeks": "3-4",
+          "description": "Whale Watching Season Peak 1"
+        }
+      },
+      {
+        "value": 15,
+        "id": 20,
+        "label": {
+          "weeks": "39-40",
+          "description": "Whale Shark & Diving Peak Season 1"
+        }
+      },
+      {
+        "value": 2,
+        "id": 18,
+        "label": {
+          "weeks": "35-36",
+          "description": "Labor Day Weekend"
+        }
+      }
+    ]
+  }
+]

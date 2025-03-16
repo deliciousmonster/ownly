@@ -5,7 +5,8 @@
     "weeks": [],
     "blocks": 2,
     "priority": 1,
-    "allocations": []
+    "allocations": [],
+    "totalValue": null
   },
   {
     "email": "kimawiley@gmail.com",
@@ -13,7 +14,8 @@
     "weeks": [],
     "blocks": 1,
     "priority": 2,
-    "allocations": []
+    "allocations": [],
+    "totalValue": null
   },
   {
     "email": "santo@theplacenowaste.com",
@@ -21,7 +23,8 @@
     "weeks": [],
     "blocks": 3,
     "priority": 3,
-    "allocations": []
+    "allocations": [],
+    "totalValue": null
   },
   {
     "email": "mdgbaja@gmail.com",
@@ -29,7 +32,8 @@
     "weeks": [],
     "blocks": 1,
     "priority": 4,
-    "allocations": []
+    "allocations": [],
+    "totalValue": null
   },
   {
     "email": "user5@gmail.com",
@@ -37,7 +41,8 @@
     "weeks": [],
     "blocks": 2,
     "priority": 5,
-    "allocations": []
+    "allocations": [],
+    "totalValue": null
   },
   {
     "email": "user6@gmail.com",
@@ -45,7 +50,8 @@
     "weeks": [],
     "blocks": 3,
     "priority": 6,
-    "allocations": []
+    "allocations": [],
+    "totalValue": null
   },
   {
     "email": "user7@gmail.com",
@@ -53,7 +59,8 @@
     "weeks": [],
     "blocks": 1,
     "priority": 7,
-    "allocations": []
+    "allocations": [],
+    "totalValue": null
   },
   {
     "email": "user8@gmail.com",
@@ -61,6 +68,7 @@
     "weeks": [],
     "blocks": 3,
     "priority": 8,
-    "allocations": []
+    "allocations": [],
+    "totalValue": null
   }
 ]

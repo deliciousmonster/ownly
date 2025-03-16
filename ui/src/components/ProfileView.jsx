@@ -16,6 +16,15 @@ function ProfileView() {
     setLockStatus({ locked, total });
   }
 
+  const getUser = async () => {
+    if (persistedUser) {
+      const response = await axios.get(`https://localhost:9926/getUser/${persistedUser.id}`);
+      if (response) {
+        setPersistedUser(response.data);
+      }
+    }
+  }
+
   const onSortEnd = async (oldIndex, newIndex) => {
     if(!persistedUser.locked) {
       const newUser = { ...persistedUser };
@@ -43,8 +52,11 @@ function ProfileView() {
   }
 
   useEffect(() => {
-    getLockStatus();
-  }, [])
+    if (persistedUser) {
+      getUser();
+      getLockStatus();
+    }
+  }, [persistedUser])
 
   return (
     <Row id="profile">
@@ -103,50 +115,73 @@ function ProfileView() {
         <h5>4. Lock In Your Choices</h5>
         <hr />
         <div className="card pt-3">
-          <b>We'll run our allocator once all owners have locked their choices</b>
-          <hr />
-          {persistedUser.locked ? (
-            <Button block color="danger" onClick={() => lockPreferences(false)}>Unlock My Week And Usage Preferences</Button>
+          {persistedUser?.allocations?.length ? (
+            <>
+              <b>Here are your allocations for next year!</b>
+              <hr />
+              {persistedUser.allocations.map((week) => (
+                <div className="card" key={week.id}>
+                  <Row>
+                    <Col className="weeks">
+                      <b>Weeks {week.label.weeks}</b>
+                    </Col>
+                    <Col className="label">
+                      {week.label.description}
+                    </Col>
+                  </Row>
+                </div>
+              ))}
+              <hr />
+              <Button block color="success" onClick={() => navigate('/calendar')}>View Allocations For All Users</Button>
+            </>
           ) : (
-            <Button block color="success" onClick={() => lockPreferences(true)}>Lock My Week And Usage Preferences</Button>
-          )}
-          <hr />
-          <Row>
-            <Col xs="12" md="7">
-              <Countdown date={1742223600000} renderer={({ days, hours, minutes, completed }) =>
-                completed ? (
+            <>
+              <b>We'll run our allocator once all owners have locked their choices</b>
+              <hr />
+              {persistedUser.locked ? (
+                <Button block color="danger" onClick={() => lockPreferences(false)}>Unlock My Week And Usage Preferences</Button>
+              ) : (
+                <Button block color="success" onClick={() => lockPreferences(true)}>Lock My Week And Usage Preferences</Button>
+              )}
+              <hr />
+              <Row>
+                <Col xs="12" md="7">
+                  <Countdown date={1742223600000} renderer={({ days, hours, minutes, completed }) =>
+                    completed ? (
+                      <Row className="pb-3">
+                        <Col className="text-center">
+                          <h4>GameTime</h4>
+                          Draft is in progress
+                        </Col>
+                      </Row>
+                    ) : (
+                      <Row className="pb-3">
+                        <Col className="text-center">
+                          <h4>{days}</h4>
+                          days
+                        </Col>
+                        <Col className="text-center">
+                          <h4>{hours}</h4>
+                          hours
+                        </Col>
+                        <Col className="text-center">
+                          <h4>{minutes}</h4>
+                          minutes
+                        </Col>
+                      </Row>
+                    )} />
+                </Col>
+                <Col xs="12" md="5">
                   <Row className="pb-3">
                     <Col className="text-center">
-                      <h4>GameTime</h4>
-                      Draft is in progress
+                      <h4>{lockStatus.locked}/{lockStatus.total}</h4>
+                      Owners Locked
                     </Col>
                   </Row>
-                ) : (
-                  <Row className="pb-3">
-                    <Col className="text-center">
-                      <h4>{days}</h4>
-                      days
-                    </Col>
-                    <Col className="text-center">
-                      <h4>{hours}</h4>
-                      hours
-                    </Col>
-                    <Col className="text-center">
-                      <h4>{minutes}</h4>
-                      minutes
-                    </Col>
-                  </Row>
-                )} />
-            </Col>
-            <Col xs="12" md="5">
-              <Row className="pb-3">
-                <Col className="text-center">
-                  <h4>{lockStatus.locked}/{lockStatus.total}</h4>
-                  Owners Locked
                 </Col>
               </Row>
-            </Col>
-          </Row>
+            </>
+          )}
         </div>
       </Col>
     </Row>
