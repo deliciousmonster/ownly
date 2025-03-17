@@ -1,5 +1,22 @@
 @use "vars";
 
+
+.card {
+  background-color: vars.$color-white !important;
+  border: 1px solid vars.$color-grey;
+  color: vars.$color-black;
+  padding: 5px 15px;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.list {
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+  user-select: none;
+  cursor: move;
+}
+
 hr {
   border: 0 none;
   background-color: vars.$grey-overlay; /* Modern Browsers */

@@ -16,3 +16,13 @@ type Weeks @table @export {
     label: Any
     maintenance: Boolean @indexed
 }
+
+type Properties @table @export {
+    id: Int @primaryKey
+    price: String
+    purchasedShares: Int
+    totalShares: Int
+    address: String
+    image: String
+    name: String
+}

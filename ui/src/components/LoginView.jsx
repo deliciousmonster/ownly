@@ -19,7 +19,7 @@ function LoginView() {
         const response = await axios.get(`https://localhost:9926/Users?email=${loginresponse.data.email}&select(id)`);
         if (response.data[0]) {
           setPersistedUser({ id: response.data[0] });
-          navigate('/profile');
+          navigate('/properties');
         } else {
           setError('You are not authorized to use this application.')
         }

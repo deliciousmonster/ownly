@@ -10,11 +10,11 @@ $color-success: #7fa089 !important;
 $color-red: #d97c5e;
 $color-danger: #d97c5e;
 
-$gradient-black-grey: linear-gradient(45deg, $color-tan, $color-grey, $color-tan);
+$gradient-black-grey: radial-gradient($color-pureblack 0, $color-black 75%);
 $gradient-white-lightgrey: linear-gradient(to bottom, rgba(255, 255, 255, 0.01) 31%, rgba(0, 0, 0, 0.05) 100%);
 $faintest-white-overlay: rgba(255, 255, 255, 0.01);
 $fainter-white-overlay: rgba(255, 255, 255, 0.05);
-$faint-white-overlay: rgba(255, 255, 255, 0.1);
+$faint-white-overlay: rgba(255, 255, 255, 0.2);
 $white-overlay: rgba(255, 255, 255, 0.3);
 $whiter-overlay: rgba(255, 255, 255, 0.5);
 $light-white-overlay: rgba(255, 255, 255, 0.9);

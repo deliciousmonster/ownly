@@ -1,0 +1,32 @@
+@use "vars";
+
+#properties {
+  .card {
+    background-size: cover;
+    padding: 0;
+    margin-bottom: 30px;
+    box-shadow: 0 0 10px vars.$grey-overlay;
+
+    .darker {
+      height: 250px;
+      width: 100%;
+      padding: 20px 30px;
+      margin: auto;
+      background: vars.$dark-grey-overlay;
+      display: flex;
+      flex-direction: row;
+      align-items: end;
+      color: vars.$color-white;
+      font-weight: 600;
+      font-size: 100%;
+
+      .button {
+        max-width: 100px;
+        text-align: right;
+        display: flex;
+        flex-direction: row;
+        align-items: end;
+      }
+    }
+  }
+}

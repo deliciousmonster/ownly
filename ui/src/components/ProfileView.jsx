@@ -5,8 +5,10 @@ import axios from 'axios';
 import useLocalStorageState from 'use-local-storage-state';
 import Countdown from 'react-countdown';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function ProfileView() {
+  const navigate = useNavigate();
   const [lockStatus, setLockStatus] = useState({ locked: '-', total: '-' });
   const [persistedUser, setPersistedUser] = useLocalStorageState('persistedUser', { defaultValue: false });
   const years = Array.from({ length: 8 }, (_, i) => [i + 2026, i + persistedUser.priority > 8 ? i + persistedUser.priority - 8 : i + persistedUser.priority]);
