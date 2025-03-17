@@ -2,20 +2,8 @@
 
 #calendar {
   .list {
-    .card {
-      padding: 5px 15px;
-
-      .weeks,
-      .name,
-      .button {
-        max-width: 120px;
-      }
-      .weeks,
-      .name,
-      .description {
-        padding-top: 10px;
-      }
-
+    .listitem {
+      cursor: auto;
     }
   }
 
@@ -28,6 +16,5 @@
     padding-top: 20px;
     border: 1px dashed vars.$color-grey;
     height: 60px;
-
   }
 }

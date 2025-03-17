@@ -21,36 +21,39 @@ function MarketplaceView() {
   return (
     <Row id="calendar" className="mb-5">
       <Col md="8" xs="12">
-        <h5>Assignments For 2026</h5>
-        <hr />
-        <div className="list">
-          {allocations.length ? allocations.map((week) =>  (
-            <div className="card" key={week.id}>
-              <Row>
-                <Col className="weeks">
-                  <b>Weeks {week.label.weeks}</b>
-                </Col>
-                <Col className="description">
-                  {week.label.description}
-                </Col>
-                <Col className="name">
-                  {week.name}
-                </Col>
-                <Col className="button text-end">
-                  <Button size="sm" color="success">trade</Button>
-                </Col>
-              </Row>
-            </div>
-          )) : (
-            <div>The draft has not yet been run. Please check back soon!</div>
-          )}
+        <h6>Assignments For 2026</h6>
+        <div className="card listholder my-4 pt-3">
+          <div className="list">
+            {allocations.length ? allocations.map((week) =>  (
+              <div className="card listitem" key={week.id}>
+                <Row>
+                  <Col className="weeks">
+                    <b>Weeks {week.label.weeks}</b>
+                  </Col>
+                  <Col className="description">
+                    {week.label.description}
+                  </Col>
+                  <Col className="name">
+                    {week.name}
+                  </Col>
+                  <Col className="button">
+                    <Button size="sm" color="success">rent</Button>
+                  </Col>
+                  <Col className="button">
+                    <Button size="sm" color="success">trade</Button>
+                  </Col>
+                </Row>
+              </div>
+            )) : (
+              <div>The draft has not yet been run. Please check back soon!</div>
+            )}
+          </div>
         </div>
       </Col>
       <Col md="4" xs="12">
-        <h5>Marketplace</h5>
-        <hr />
+        <h6>Marketplace</h6>
         {allocations.length ? (
-          <div className="card mb-4 pt-3">
+          <div className="card my-4 pt-3">
             <b>Safely trade weeks with other owners.</b>
             <hr />
             1. Select one of your weeks from the list.
@@ -65,7 +68,7 @@ function MarketplaceView() {
             <Button block color="success">Propose Trade</Button>
           </div>
         ) : (
-          <div>Trade weeks with other owners.</div>
+          <div className="card my-4 pt-3">Trade weeks with other owners.</div>
         )}
       </Col>
     </Row>

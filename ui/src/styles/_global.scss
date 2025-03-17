@@ -10,11 +10,52 @@
   text-align: left;
 }
 
-.list {
-  max-height: calc(100vh - 200px);
-  overflow-y: auto;
-  user-select: none;
-  cursor: move;
+.listholder {
+  padding-right: 1px;
+
+  .list {
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+    user-select: none;
+    cursor: move;
+    padding-right: 10px;
+
+    .listitem {
+      border-radius: 0 !important;
+      border-left-width: 0 !important;
+      border-right-width: 0;
+
+      .weeks,
+      .name {
+        max-width: 140px;
+      }
+
+      .description {
+        white-space: nowrap;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .button {
+        position: relative;
+        max-width: 80px;
+        width: 80px;
+        padding-top: 0;
+        margin-top: 0 !important;
+
+        .btn {
+          width: 75px;
+          position: absolute;
+          top: -5px;
+          right: -3px;
+          font-size: 11px;
+          border-radius: 0;
+          border-width: 0;
+          height: 26px;
+        }
+      }
+    }
+  }
 }
 
 hr {

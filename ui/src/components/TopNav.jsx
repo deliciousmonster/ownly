@@ -21,7 +21,7 @@ function TopNav() {
         <div id="logo" title="Go to Organizations Home" />
 
       </NavbarBrand>
-      <Button onClick={runDraft}>Run Demo Draft</Button>
+      <Button color="success" onClick={runDraft}>Run Demo Draft</Button>
       <Nav>
         <NavItem>
           <NavLink to={'/properties'}>Properties</NavLink>
