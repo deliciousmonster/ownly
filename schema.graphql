@@ -13,8 +13,10 @@ type Users @table @export {
 type Weeks @table @export {
     id: Int @primaryKey
     value: Int @indexed
-    label: Any
-    maintenance: Boolean @indexed
+    description: String
+    start: String
+    end: String
+    maintenance: Boolean
 }
 
 type Properties @table @export {

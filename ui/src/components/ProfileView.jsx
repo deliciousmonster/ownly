@@ -11,7 +11,6 @@ function ProfileView() {
   const navigate = useNavigate();
   const [lockStatus, setLockStatus] = useState({ locked: '-', total: '-' });
   const [persistedUser, setPersistedUser] = useLocalStorageState('persistedUser', { defaultValue: false });
-  const years = Array.from({ length: 8 }, (_, i) => [i + 2026, i + persistedUser.priority > 8 ? i + persistedUser.priority - 8 : i + persistedUser.priority]);
 
   const getLockStatus = async () => {
     const { data: { locked, total }} = await axios.get(`https://localhost:9926/lockstatus`);
@@ -71,10 +70,10 @@ function ProfileView() {
                 <div className="card listitem">
                     <Row>
                       <Col className="weeks">
-                        <b>Weeks {week.label.weeks}</b>
+                        <b>{week.start} - {week.end}</b>
                       </Col>
                       <Col className="description">
-                        {week.label.description}
+                        {week.description}
                       </Col>
                     </Row>
                 </div>
@@ -86,22 +85,36 @@ function ProfileView() {
       <Col md="6" xs="12">
         <h6>2. Set Your Usage Preferences</h6>
         <div className="card my-4 pt-3">
-            <b>Decide how you'd like to use your 6 weeks.</b>
-            <hr />
-            <div className="radio-button">
-              <input type="radio" name="blocks" id="3" value="3" checked={persistedUser.blocks === 3} onChange={updateBlocks} disabled={persistedUser.locked} />
-              <b>3 Blocks:</b> 2 Weeks Each.
-            </div>
-
-            <div className="radio-button">
-              <input type="radio" name="blocks" id="2" value="2" checked={persistedUser.blocks === 2} onChange={updateBlocks} disabled={persistedUser.locked} />
-              <b>2 Blocks:</b> 1 Two Week Block. 1 Four Week Block.
-            </div>
-
-            <div className="radio-button">
-              <input type="radio" name="blocks" id="1" value="1" checked={persistedUser.blocks === 1} onChange={updateBlocks} disabled={persistedUser.locked}/>
-              <b>One Block:</b> All 6 Weeks At Once.
-            </div>
+          <b>Decide how you'd like to use your 6 weeks.</b>
+          <hr />
+          <Row>
+            <Col>
+              <div className="radio-button">
+                <input type="radio" name="blocks" id="3" value="6" checked={persistedUser.blocks === 6} onChange={updateBlocks} disabled={persistedUser.locked} />
+                <b>6 Blocks:</b>&nbsp;1 Week Each.
+              </div>
+            </Col>
+            <Col>
+              <div className="radio-button">
+                <input type="radio" name="blocks" id="2" value="3" checked={persistedUser.blocks === 3} onChange={updateBlocks} disabled={persistedUser.locked} />
+                <b>3 Blocks:</b>&nbsp;2 Weeks Each.
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <div className="radio-button">
+                <input type="radio" name="blocks" id="2" value="2" checked={persistedUser.blocks === 2} onChange={updateBlocks} disabled={persistedUser.locked} />
+                <b>2 Blocks:</b>&nbsp;3 Weeks Each.
+              </div>
+            </Col>
+            <Col>
+              <div className="radio-button">
+                <input type="radio" name="blocks" id="1" value="1" checked={persistedUser.blocks === 1} onChange={updateBlocks} disabled={persistedUser.locked}/>
+                <b>One Block:</b>&nbsp;All 6 Weeks At Once.
+              </div>
+            </Col>
+          </Row>
         </div>
         <h6>4. Lock In Your Choices</h6>
         <div className="card my-4 pt-3">
@@ -149,14 +162,14 @@ function ProfileView() {
         </div>
         <h6>5. Review Your Allocated Weeks</h6>
         <div className="card my-4 pt-3">
-          {persistedUser.allocations.map((week) => (
+          {persistedUser.allocations?.sort((a, b) => a.id - b.id).map((week) => (
             <div className="card" key={week.id}>
               <Row>
                 <Col className="weeks">
-                  <b>Weeks {week.label.weeks}</b>
+                  <b>{week.start} - {week.end}</b>
                 </Col>
                 <Col className="label">
-                  {week.label.description}
+                  {week.description}
                 </Col>
               </Row>
             </div>

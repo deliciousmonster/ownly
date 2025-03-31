@@ -32,10 +32,12 @@ function LoginView() {
 
   return (
     <div id="login" onClick={googleLogin}>
-      <>
-        <img src="/logo.png" alt="Logo" height="120" />
+      <div id="background"></div>
+      <div id="border-box"></div>
+      <div className="logo">
+        <img src="/logo.png" alt="Logo" height="100" />
         <span className="text-white">{error || 'click to sign in with google'}</span>
-      </>
+      </div>
     </div>
   );
 }

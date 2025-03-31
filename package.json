@@ -2,5 +2,8 @@
   "name": "ownly-demo",
   "version": "1.0.0",
   "description": "A demonstration scheduling app for a fractional co-ownership startup",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "date-fns": "^4.1.0"
+  }
 }

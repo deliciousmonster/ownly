@@ -1,15 +1,17 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Button, Col, Input, Row } from 'reactstrap';
+import useLocalStorageState from 'use-local-storage-state';
 
 function MarketplaceView() {
   const [allocations, setAllocations] = useState([]);
+  const [persistedUser] = useLocalStorageState('persistedUser', { defaultValue: false });
 
   const getAllocations = async () => {
-    const response = await axios.get(`https://localhost:9926/Users/?select(name,totalValue,allocations)`);
+    const response = await axios.get(`https://localhost:9926/Users/?select(id,name,totalValue,allocations)`);
     if (response?.data[0].allocations) {
       const orderedWeeks = [];
-      response.data.map((user) => orderedWeeks.push(...user.allocations?.map((a) => ({ ...a, name: user.name }))));
+      response.data.map((user) => orderedWeeks.push(...user.allocations?.map((a) => ({ ...a, name: user.name, userid: user.id }))));
       setAllocations(orderedWeeks.sort((a, b) => a.id - b.id));
     }
   }
@@ -17,6 +19,9 @@ function MarketplaceView() {
   useEffect(() => {
     getAllocations();
   }, [])
+
+  console.log(persistedUser);
+  console.log(allocations);
 
   return (
     <Row id="calendar" className="mb-5">
@@ -28,19 +33,19 @@ function MarketplaceView() {
               <div className="card listitem" key={week.id}>
                 <Row>
                   <Col className="weeks">
-                    <b>Weeks {week.label.weeks}</b>
+                    <b>{week.start} - {week.end}</b>
                   </Col>
                   <Col className="description">
-                    {week.label.description}
+                    {week.description}
                   </Col>
                   <Col className="name">
                     {week.name}
                   </Col>
                   <Col className="button">
-                    <Button size="sm" color="success">rent</Button>
+                    {persistedUser.id === week.userid && (<Button size="sm" color="success">rent</Button>)}
                   </Col>
                   <Col className="button">
-                    <Button size="sm" color="success">trade</Button>
+                    {persistedUser.id === week.userid && (<Button size="sm" color="success">trade</Button>)}
                   </Col>
                 </Row>
               </div>
@@ -51,11 +56,9 @@ function MarketplaceView() {
         </div>
       </Col>
       <Col md="4" xs="12">
-        <h6>Marketplace</h6>
+        <h6>Trade Weeks</h6>
         {allocations.length ? (
           <div className="card my-4 pt-3">
-            <b>Safely trade weeks with other owners.</b>
-            <hr />
             1. Select one of your weeks from the list.
             <div className="dragDrop">select a week</div>
             <hr />
@@ -69,6 +72,19 @@ function MarketplaceView() {
           </div>
         ) : (
           <div className="card my-4 pt-3">Trade weeks with other owners.</div>
+        )}
+        <h6>Rent Weeks</h6>
+        {allocations.length ? (
+          <div className="card my-4 pt-3">
+            1. Select one of your weeks from the list.
+            <div className="dragDrop">select a week</div>
+            2. Enter a target rental price for your week
+            <Input type="text" className="text-center mt-2" defaultValue="$1500.00" />
+            <hr />
+            <Button block color="success">List Rental</Button>
+          </div>
+        ) : (
+          <div className="card my-4 pt-3">Put your week up for rent.</div>
         )}
       </Col>
     </Row>

@@ -9,7 +9,6 @@ seedWeeks();
 seedProperties();
 
 const weeksIterable = await Weeks.get({
-	conditions: [{ attribute: 'maintenance', comparator: 'not_equal', value: true }],
 	sort: { attribute: 'value', descending: true }
 });
 const weeksArray = await Array.fromAsync(weeksIterable);
@@ -43,11 +42,16 @@ export class draft extends Users {
 
 		await Array.fromAsync(users.map(({ id, name, weeks, blocks, priority }) => draftObject[id] = ({ weeks: weeks?.length ? weeks.map(({ id, value }) => ({ id, value })) : weeksArray.map(({ id, value }) => ({ id, value })), blocks, priority, name })));
 
-		const allocations = allocateWeeks(draftObject);
+		const { allocated, unallocated } = allocateWeeks(draftObject);
 
-		Object.keys(allocations).forEach((id) => {
-			Users.patch(id, { allocations: allocations[id].allocations.map((a) => weeksArray.find((w) => w.id === a.id)), totalValue: allocations[id].totalValue })
+		Object.keys(allocated).forEach((id) => {
+			Users.patch(id, { allocations: allocated[id].allocations.map((a) => weeksArray.find((w) => w.id === a.id)), totalValue: allocated[id].totalValue })
 		});
-		return allocations;
+
+		unallocated.forEach((week) => {
+			Weeks.patch(week.id, {maintenance: true })
+		});
+
+		return allocated;
 	}
 }
