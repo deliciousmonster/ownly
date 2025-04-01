@@ -1,5 +1,5 @@
 import { Navbar, NavbarBrand, Nav, NavItem, Button } from 'reactstrap';
-import { useNavigate, NavLink } from 'react-router-dom';
+import { useNavigate, NavLink, useLocation } from 'react-router-dom';
 import useLocalStorageState from 'use-local-storage-state';
 import axios from 'axios';
 
@@ -21,7 +21,9 @@ function TopNav() {
         <div id="logo" title="Go to Organizations Home" />
 
       </NavbarBrand>
-      <Button color="success" onClick={runDraft}>Run Demo Draft</Button>
+      {window.location.host.indexOf('localhost') !== -1 && (
+        <Button color="success" onClick={runDraft}>Run Demo Draft</Button>
+      )}
       <Nav>
         <NavItem>
           <NavLink to={'/properties'}>Properties</NavLink>

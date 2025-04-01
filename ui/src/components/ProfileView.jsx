@@ -89,28 +89,28 @@ function ProfileView() {
           <Row>
             <Col>
               <div className="radio-button">
-                <input type="radio" name="blocks" id="3" value="6" checked={persistedUser.blocks === 6} onChange={updateBlocks} disabled={persistedUser.locked} />
+                <input type="radio" name="blocks" id="3" value="6" checked={true} onChange={updateBlocks} disabled={persistedUser.locked} />
                 <b>6 Blocks:</b>&nbsp;1 Week Each.
               </div>
             </Col>
             <Col>
               <div className="radio-button">
-                <input type="radio" name="blocks" id="2" value="3" checked={persistedUser.blocks === 3} onChange={updateBlocks} disabled={persistedUser.locked} />
-                <b>3 Blocks:</b>&nbsp;2 Weeks Each.
+                <input type="radio" name="blocks" id="2" value="3" checked={persistedUser.blocks === 3 && false} onChange={updateBlocks} disabled={true} />
+                <b>3 Blocks:</b>&nbsp;2 Weeks Each. (Coming Soon)
               </div>
             </Col>
           </Row>
           <Row>
             <Col>
               <div className="radio-button">
-                <input type="radio" name="blocks" id="2" value="2" checked={persistedUser.blocks === 2} onChange={updateBlocks} disabled={persistedUser.locked} />
-                <b>2 Blocks:</b>&nbsp;3 Weeks Each.
+                <input type="radio" name="blocks" id="2" value="2" checked={persistedUser.blocks === 2 && false} onChange={updateBlocks} disabled={true} />
+                <b>2 Blocks:</b>&nbsp;3 Weeks Each. (Coming Soon)
               </div>
             </Col>
             <Col>
               <div className="radio-button">
-                <input type="radio" name="blocks" id="1" value="1" checked={persistedUser.blocks === 1} onChange={updateBlocks} disabled={persistedUser.locked}/>
-                <b>One Block:</b>&nbsp;All 6 Weeks At Once.
+                <input type="radio" name="blocks" id="1" value="1" checked={persistedUser.blocks === 1 && false} onChange={updateBlocks} disabled={true}/>
+                <b>One Block:</b>&nbsp;All 6 Weeks At Once. (Coming Soon)
               </div>
             </Col>
           </Row>
@@ -119,7 +119,7 @@ function ProfileView() {
         <div className="card my-4 pt-3">
           <Row>
             <Col xs="12" md="7">
-              <Countdown date={1742228700000} renderer={({ days, hours, minutes, completed }) =>
+              <Countdown date={'2025-04-04T12:00:00-07:00'} renderer={({ days, hours, minutes, completed }) =>
                 completed ? (
                   <Row className="pb-3">
                     <Col className="text-center">
