@@ -1,5 +1,5 @@
 import { Navbar, NavbarBrand, Nav, NavItem, Button } from 'reactstrap';
-import { useNavigate, NavLink, useLocation } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import useLocalStorageState from 'use-local-storage-state';
 import axios from 'axios';
 

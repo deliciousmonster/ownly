@@ -13,7 +13,7 @@ function ProfileView() {
   const [persistedUser, setPersistedUser] = useLocalStorageState('persistedUser', { defaultValue: false });
 
   const getLockStatus = async () => {
-    const { data: { locked, total }} = await axios.get(`https://localhost:9926/lockstatus`);
+    const { data: { locked, total }} = await axios.get(`/lockstatus`);
     setLockStatus({ locked, total });
   }
 
@@ -22,7 +22,7 @@ function ProfileView() {
       const newUser = { ...persistedUser };
       newUser.weeks = arrayMoveImmutable(newUser.weeks, oldIndex, newIndex);
       setPersistedUser(newUser);
-      await axios.put(`https://localhost:9926/Users/${newUser.id}`, newUser);
+      await axios.put(`/Users/${newUser.id}`, newUser);
     }
   }
 
@@ -31,7 +31,7 @@ function ProfileView() {
       const newUser = { ...persistedUser };
       newUser.blocks = parseInt(e.target.value, 10);
       setPersistedUser(newUser);
-      await axios.put(`https://localhost:9926/Users/${newUser.id}`, newUser);
+      await axios.put(`/Users/${newUser.id}`, newUser);
     }
   }
 
@@ -39,7 +39,7 @@ function ProfileView() {
     const newUser = { ...persistedUser };
     newUser.locked = value;
     setPersistedUser(newUser);
-    await axios.put(`https://localhost:9926/Users/${newUser.id}`, newUser);
+    await axios.put(`/Users/${newUser.id}`, newUser);
     await getLockStatus();
   }
 
@@ -47,7 +47,7 @@ function ProfileView() {
     if (persistedUser) {
       const getUser = async () => {
         if (persistedUser) {
-          const response = await axios.get(`https://localhost:9926/getUser/${persistedUser.id}`);
+          const response = await axios.get(`/getUser/${persistedUser.id}`);
           if (response) {
             setPersistedUser(response.data);
           }

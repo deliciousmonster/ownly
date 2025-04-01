@@ -6,7 +6,7 @@ function PropertiesView() {
   const [properties, setProperties] = useState([]);
 
   const getProperties = async () => {
-    const response = await axios.get(`https://localhost:9926/Properties/`);
+    const response = await axios.get(`/Properties/`);
     if (response?.data) {
       setProperties(response.data);
     }

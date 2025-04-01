@@ -8,7 +8,7 @@ function MarketplaceView() {
   const [persistedUser] = useLocalStorageState('persistedUser', { defaultValue: false });
 
   const getAllocations = async () => {
-    const response = await axios.get(`https://localhost:9926/Users/?select(id,name,totalValue,allocations)`);
+    const response = await axios.get(`/Users/?select(id,name,totalValue,allocations)`);
     if (response?.data[0].allocations) {
       const orderedWeeks = [];
       response.data.map((user) => {
@@ -22,9 +22,6 @@ function MarketplaceView() {
   useEffect(() => {
     getAllocations();
   }, [])
-
-  console.log(persistedUser);
-  console.log(allocations);
 
   return (
     <Row id="calendar" className="mb-5">

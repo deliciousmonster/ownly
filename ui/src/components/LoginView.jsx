@@ -16,7 +16,7 @@ function LoginView() {
         { headers: { Authorization: `Bearer ${tokenResponse.access_token}` } },
       );
       if (loginresponse.data.email) {
-        const response = await axios.get(`https://localhost:9926/Users?email=${loginresponse.data.email}&select(id)`);
+        const response = await axios.get(`https://${window.location.indexOf('localhost') !== -1 ? 'localhost' : 'cloud-jaxonrepp.harperdbcloud.com'}:9926/Users?email=${loginresponse.data.email}&select(id)`);
         if (response.data[0]) {
           setPersistedUser({ id: response.data[0] });
           navigate('/properties');
