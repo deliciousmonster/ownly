@@ -14,6 +14,15 @@ function ProfileView() {
   const [lockStatus, setLockStatus] = useState({ locked: '-', total: '-' });
   const [persistedUser, setPersistedUser] = useLocalStorageState('persistedUser', { defaultValue: false });
 
+  const getUser = async () => {
+    if (persistedUser) {
+      const response = await axios.get(`${config.API_URL}/user/${persistedUser.id}`);
+      if (response) {
+        setPersistedUser(response.data);
+      }
+    }
+  }
+
   const getLockStatus = async () => {
     const { data: { locked, total }} = await axios.get(`${config.API_URL}/lockstatus`);
     setLockStatus({ locked, total });
@@ -40,25 +49,16 @@ function ProfileView() {
   const lockPreferences = async (value) => {
     const newUser = { ...persistedUser };
     newUser.locked = value;
-    setPersistedUser(newUser);
     await axios.put(`${config.API_URL}/users/${newUser.id}`, newUser);
-    await getLockStatus();
+    setPersistedUser(newUser);
   }
 
   useEffect(() => {
     if (persistedUser) {
-      const getUser = async () => {
-        if (persistedUser) {
-          const response = await axios.get(`${config.API_URL}/user/${persistedUser.id}`);
-          if (response) {
-            setPersistedUser(response.data);
-          }
-        }
-      }
       getUser();
       getLockStatus();
     }
-  }, [persistedUser, setPersistedUser])
+  }, [persistedUser])
 
   return (
     <Row id="profile">
