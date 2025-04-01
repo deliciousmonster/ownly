@@ -11,7 +11,10 @@ function MarketplaceView() {
     const response = await axios.get(`https://localhost:9926/Users/?select(id,name,totalValue,allocations)`);
     if (response?.data[0].allocations) {
       const orderedWeeks = [];
-      response.data.map((user) => orderedWeeks.push(...user.allocations?.map((a) => ({ ...a, name: user.name, userid: user.id }))));
+      response.data.map((user) => {
+        const userAllocations = user.allocations?.map((a) => ({ ...a, name: user.name, userid: user.id }));
+        orderedWeeks.push(...userAllocations);
+      });
       setAllocations(orderedWeeks.sort((a, b) => a.id - b.id));
     }
   }
@@ -62,7 +65,7 @@ function MarketplaceView() {
             1. Select one of your weeks from the list.
             <div className="dragDrop">select a week</div>
             <hr />
-            2. Select another owner's week to trade for..
+            2. Select another owner&apos;s week to trade for..
             <div className="dragDrop">select a week</div>
             <hr />
             3. Even the trade (estimated value provided).

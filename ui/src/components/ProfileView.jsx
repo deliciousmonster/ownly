@@ -17,15 +17,6 @@ function ProfileView() {
     setLockStatus({ locked, total });
   }
 
-  const getUser = async () => {
-    if (persistedUser) {
-      const response = await axios.get(`https://localhost:9926/getUser/${persistedUser.id}`);
-      if (response) {
-        setPersistedUser(response.data);
-      }
-    }
-  }
-
   const onSortEnd = async (oldIndex, newIndex) => {
     if(!persistedUser.locked) {
       const newUser = { ...persistedUser };
@@ -54,10 +45,18 @@ function ProfileView() {
 
   useEffect(() => {
     if (persistedUser) {
+      const getUser = async () => {
+        if (persistedUser) {
+          const response = await axios.get(`https://localhost:9926/getUser/${persistedUser.id}`);
+          if (response) {
+            setPersistedUser(response.data);
+          }
+        }
+      }
       getUser();
       getLockStatus();
     }
-  }, [persistedUser])
+  }, [persistedUser, setPersistedUser])
 
   return (
     <Row id="profile">
@@ -85,7 +84,7 @@ function ProfileView() {
       <Col md="6" xs="12">
         <h6>2. Set Your Usage Preferences</h6>
         <div className="card my-4 pt-3">
-          <b>Decide how you'd like to use your 6 weeks.</b>
+          <b>Decide how you&apos;d like to use your 6 weeks.</b>
           <hr />
           <Row>
             <Col>
