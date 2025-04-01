@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Button, Col, Row } from 'reactstrap';
 
+import config from '../config.js';
+
 function PropertiesView() {
   const [properties, setProperties] = useState([]);
 
   const getProperties = async () => {
-    const response = await axios.get(`/Properties/`);
+    const response = await axios.get(`${config.API_URL}/properties/`);
     if (response?.data) {
       setProperties(response.data);
     }

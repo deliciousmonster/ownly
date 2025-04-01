@@ -3,23 +3,24 @@ import { useEffect, useState } from 'react';
 import { Button, Col, Input, Row } from 'reactstrap';
 import useLocalStorageState from 'use-local-storage-state';
 
+import config from '../config.js';
+
 function MarketplaceView() {
   const [allocations, setAllocations] = useState([]);
   const [persistedUser] = useLocalStorageState('persistedUser', { defaultValue: false });
 
-  const getAllocations = async () => {
-    const response = await axios.get(`/Users/?select(id,name,totalValue,allocations)`);
-    if (response?.data[0].allocations) {
-      const orderedWeeks = [];
-      response.data.map((user) => {
-        const userAllocations = user.allocations?.map((a) => ({ ...a, name: user.name, userid: user.id }));
-        orderedWeeks.push(...userAllocations);
-      });
-      setAllocations(orderedWeeks.sort((a, b) => a.id - b.id));
-    }
-  }
-
   useEffect(() => {
+    const getAllocations = async () => {
+      const response = await axios.get(`${config.API_URL}/users?select(id,name,totalValue,allocations)`);
+      if (response?.data[0].allocations) {
+        const orderedWeeks = [];
+        response.data.map((user) => {
+          const userAllocations = user.allocations?.map((a) => ({ ...a, name: user.name, userid: user.id }));
+          orderedWeeks.push(...userAllocations);
+        });
+        setAllocations(orderedWeeks.sort((a, b) => a.id - b.id));
+      }
+    }
     getAllocations();
   }, [])
 

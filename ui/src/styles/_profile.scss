@@ -5,6 +5,9 @@
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
   }
 
 

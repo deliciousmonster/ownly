@@ -7,13 +7,15 @@ import Countdown from 'react-countdown';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import config from '../config.js';
+
 function ProfileView() {
   const navigate = useNavigate();
   const [lockStatus, setLockStatus] = useState({ locked: '-', total: '-' });
   const [persistedUser, setPersistedUser] = useLocalStorageState('persistedUser', { defaultValue: false });
 
   const getLockStatus = async () => {
-    const { data: { locked, total }} = await axios.get(`/lockstatus`);
+    const { data: { locked, total }} = await axios.get(`${config.API_URL}/lockstatus`);
     setLockStatus({ locked, total });
   }
 
@@ -22,7 +24,7 @@ function ProfileView() {
       const newUser = { ...persistedUser };
       newUser.weeks = arrayMoveImmutable(newUser.weeks, oldIndex, newIndex);
       setPersistedUser(newUser);
-      await axios.put(`/Users/${newUser.id}`, newUser);
+      await axios.put(`${config.API_URL}/users/${newUser.id}`, newUser);
     }
   }
 
@@ -31,7 +33,7 @@ function ProfileView() {
       const newUser = { ...persistedUser };
       newUser.blocks = parseInt(e.target.value, 10);
       setPersistedUser(newUser);
-      await axios.put(`/Users/${newUser.id}`, newUser);
+      await axios.put(`${config.API_URL}/users/${newUser.id}`, newUser);
     }
   }
 
@@ -39,7 +41,7 @@ function ProfileView() {
     const newUser = { ...persistedUser };
     newUser.locked = value;
     setPersistedUser(newUser);
-    await axios.put(`/Users/${newUser.id}`, newUser);
+    await axios.put(`${config.API_URL}/users/${newUser.id}`, newUser);
     await getLockStatus();
   }
 
@@ -47,7 +49,7 @@ function ProfileView() {
     if (persistedUser) {
       const getUser = async () => {
         if (persistedUser) {
-          const response = await axios.get(`/getUser/${persistedUser.id}`);
+          const response = await axios.get(`${config.API_URL}/user/${persistedUser.id}`);
           if (response) {
             setPersistedUser(response.data);
           }
@@ -96,7 +98,7 @@ function ProfileView() {
             <Col>
               <div className="radio-button">
                 <input type="radio" name="blocks" id="2" value="3" checked={persistedUser.blocks === 3 && false} onChange={updateBlocks} disabled={true} />
-                <b>3 Blocks:</b>&nbsp;2 Weeks Each. (Coming Soon)
+                <b>3 Blocks:</b>&nbsp;(Coming Soon)
               </div>
             </Col>
           </Row>
@@ -104,13 +106,13 @@ function ProfileView() {
             <Col>
               <div className="radio-button">
                 <input type="radio" name="blocks" id="2" value="2" checked={persistedUser.blocks === 2 && false} onChange={updateBlocks} disabled={true} />
-                <b>2 Blocks:</b>&nbsp;3 Weeks Each. (Coming Soon)
+                <b>2 Blocks:</b>&nbsp;(Coming Soon)
               </div>
             </Col>
             <Col>
               <div className="radio-button">
                 <input type="radio" name="blocks" id="1" value="1" checked={persistedUser.blocks === 1 && false} onChange={updateBlocks} disabled={true}/>
-                <b>One Block:</b>&nbsp;All 6 Weeks At Once. (Coming Soon)
+                <b>One Block:</b>&nbsp;(Coming Soon)
               </div>
             </Col>
           </Row>

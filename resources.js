@@ -2,7 +2,7 @@ import allocateWeeks from './helpers/allocateWeeks.js';
 import seedUsers from './helpers/seedUsers.js';
 import seedWeeks from './helpers/seedWeeks.js';
 import seedProperties from './helpers/seedProperties.js';
-const { Users, Weeks } = tables;
+const { Users, Weeks, Properties } = tables;
 
 seedUsers();
 seedWeeks();
@@ -12,6 +12,21 @@ const weeksIterable = await Weeks.get({
 	sort: { attribute: 'value', descending: true }
 });
 const weeksArray = await Array.fromAsync(weeksIterable);
+
+export class properties extends Properties {
+	allowRead() {
+		return true;
+	}
+}
+
+export class users extends Users {
+	allowRead() {
+		return true;
+	}
+	allowPut() {
+		return true;
+	}
+}
 
 export class lockstatus extends Users {
 	allowRead() {
@@ -23,24 +38,15 @@ export class lockstatus extends Users {
 	}
 }
 
-export class getUser extends Users {
-	allowRead() {
-		return true;
-	}
-	async get(query) {
-		if(!this.weeks?.length) {
-			this.weeks = weeksArray;
-		}
-		return super.get();
-	}
-}
-
-export class getAllocations extends Users {
+export class user extends Users {
 	allowRead() {
 		return true;
 	}
 	async get() {
-		return Array.fromAsync(Users.get({ select: ['name', 'allocations', 'totalValue'] }));
+		if(!this.weeks?.length) {
+			this.weeks = weeksArray;
+		}
+		return super.get();
 	}
 }
 

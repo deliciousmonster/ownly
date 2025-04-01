@@ -3,15 +3,20 @@ import { useNavigate, NavLink } from 'react-router-dom';
 import useLocalStorageState from 'use-local-storage-state';
 import axios from 'axios';
 
+import config from '../config.js';
+
 function TopNav() {
   const navigate = useNavigate();
   const [persistedUser, setPersistedUser] = useLocalStorageState('persistedUser', { defaultValue: false });
 
   const runDraft = async () => {
-    await axios.get(`/draft`);
-    const response = await axios.get(`/getUser/${persistedUser.id}`);
-    if (response) {
-      setPersistedUser(response.data);
+    console.log('runDraft', persistedUser.id);
+    if(persistedUser.id) {
+      await axios.get(`${config.API_URL}/draft`);
+      const response = await axios.get(`${config.API_URL}/user/${persistedUser.id}`);
+      if (response) {
+        setPersistedUser(response.data);
+      }
     }
   }
 

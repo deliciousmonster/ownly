@@ -1,17 +1,20 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import useLocalStorageState from 'use-local-storage-state';
+
 import LoginView from './components/LoginView.jsx';
 import PropertiesView from './components/PropertiesView.jsx';
 import ProfileView from './components/ProfileView.jsx';
 import Calendar from './components/MarketplaceView.jsx';
 import TopNav from './components/TopNav.jsx';
-import useLocalStorageState from 'use-local-storage-state';
+
+import config from './config.js';
 
 function App() {
   const [persistedUser] = useLocalStorageState('persistedUser', { defaultValue: false });
 
   return (
-    <GoogleOAuthProvider clientId="524595955601-1un1gfmni825lie78anqd10rccvhfkcf.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId={config.GOOGLE_CLIENT_ID}>
       <div id="app">
         <Router>
           <TopNav />

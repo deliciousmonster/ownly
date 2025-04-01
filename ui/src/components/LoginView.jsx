@@ -4,6 +4,8 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import useLocalStorageState from 'use-local-storage-state';
 
+import config from '../config.js';
+
 function LoginView() {
   const navigate = useNavigate();
   const [error, setError] = useState('');
@@ -16,7 +18,7 @@ function LoginView() {
         { headers: { Authorization: `Bearer ${tokenResponse.access_token}` } },
       );
       if (loginresponse.data.email) {
-        const response = await axios.get(`/Users?email=${loginresponse.data.email}&select(id)`);
+        const response = await axios.get(`${config.API_URL}/users?email=${loginresponse.data.email}&select(id)`);
         if (response.data[0]) {
           setPersistedUser({ id: response.data[0] });
           navigate('/properties');
