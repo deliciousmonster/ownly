@@ -14,7 +14,7 @@ const weeksIterable = await Weeks.get({
 const weeksArray = await Array.fromAsync(weeksIterable);
 
 export class lockstatus extends Users {
-	allowRead();
+	allowRead() {}
 	async get() {
 		const users = await Array.fromAsync(Users.get({ select: ['locked'] }));
 		return { locked: users.filter((u) => u.locked).length, total: users.length }
@@ -22,7 +22,7 @@ export class lockstatus extends Users {
 }
 
 export class getUser extends Users {
-	allowRead();
+	allowRead() {}
 	async get(query) {
 		if(!this.weeks?.length) {
 			this.weeks = weeksArray;
@@ -32,14 +32,14 @@ export class getUser extends Users {
 }
 
 export class getAllocations extends Users {
-	allowRead();
+	allowRead() {}
 	async get() {
 		return Array.fromAsync(Users.get({ select: ['name', 'allocations', 'totalValue'] }));
 	}
 }
 
 export class draft extends Users {
-	allowRead();
+	allowRead() {}
 	async get() {
 		const users = Users.get({ select: ['id', 'name', 'weeks', 'blocks', 'priority'] });
 		const draftObject = {};
