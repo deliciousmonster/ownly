@@ -8,8 +8,8 @@ function TopNav() {
   const [persistedUser, setPersistedUser] = useLocalStorageState('persistedUser', { defaultValue: false });
 
   const runDraft = async () => {
-    await axios.get(`https://localhost:9926/draft`);
-    const response = await axios.get(`https://localhost:9926/getUser/${persistedUser.id}`);
+    await axios.get(`/draft`);
+    const response = await axios.get(`/getUser/${persistedUser.id}`);
     if (response) {
       setPersistedUser(response.data);
     }
