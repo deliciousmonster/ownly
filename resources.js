@@ -23,7 +23,7 @@ export class users extends Users {
 	allowRead() {
 		return true;
 	}
-	allowPut() {
+	allowUpdate() {
 		return true;
 	}
 }
