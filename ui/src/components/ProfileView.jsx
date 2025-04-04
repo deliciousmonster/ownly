@@ -121,7 +121,7 @@ function ProfileView() {
         <div className="card my-4 pt-3">
           <Row>
             <Col xs="12" md="7">
-              <Countdown date={'2025-04-04T12:00:00-07:00'} renderer={({ days, hours, minutes, completed }) =>
+              <Countdown date={'2025-04-06T17:00:00-07:00'} renderer={({ days, hours, minutes, completed }) =>
                 completed ? (
                   <Row className="pb-3">
                     <Col className="text-center">
