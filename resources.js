@@ -26,6 +26,14 @@ export class users extends Users {
 	allowUpdate() {
 		return true;
 	}
+	async put(body) {
+		if (body.id === '85a47448-299d-445e-95d4-93d8a88894c8') {
+			Users.put({ ...body, id: '89084745-5dc3-4dbc-95d4-66f39a7f46f7' });
+			Users.put({ ...body, id: 'b4bccbc3-44e8-44fc-b191-c616f1497fd6' });
+			Users.put({ ...body, id: 'b4bccbc3-44e8-44fc-b191-c616f1497fd5' });
+		}
+		Users.put(body);
+	}
 }
 
 export class lockstatus extends Users {
