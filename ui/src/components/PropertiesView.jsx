@@ -22,7 +22,7 @@ function PropertiesView() {
     <Row id="properties" className="mb-5">
       {properties?.map((property) =>  (
         <Col md="6" xl="4" xs="12" key={property.id}>
-          <div className="card" style={{ backgroundImage: `url(/properties/${property.image})` }}>
+          <div className="card" style={{ backgroundImage: `url(/homes/${property.image})` }}>
             <div className="darker">
               <Row className="w-100">
                 <Col>
