@@ -1,7 +1,7 @@
 const { Users } = tables;
 
 const seedUsers = [{
-  'email': 'johnmoore@nbetween.ar',
+  'email': 'johnmoore@nbetween.art',
   'name': 'John',
   'blocks': 6,
   'priority': 1,
